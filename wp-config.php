@@ -2,6 +2,7 @@
 define( 'WP_CACHE', false );    // Added by WP Rocket.
 
 define( 'WP_MEMORY_LIMIT', '512M' );
+define('FS_METHOD', 'direct');
 
 /**
  * The base configurations of the WordPress.
@@ -20,16 +21,16 @@ define( 'WP_MEMORY_LIMIT', '512M' );
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'traycable.ir');
+define('DB_NAME', getenv('DB_NAME'));
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', getenv('DB_USER'));
 
 /** MySQL database password */
-define('DB_PASSWORD', 'sal13883');
+define('DB_PASSWORD', getenv('DB_PASSWORD'));
 
 /** MySQL hostname */
-define('DB_HOST', '127.0.0.1');
+define('DB_HOST', getenv('DB_HOST'));
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
