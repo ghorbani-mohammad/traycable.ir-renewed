@@ -1,0 +1,20 @@
+services:
+  traycable:
+    image: thiagobarradas/wordpress:4.9.4-php7.2
+    container_name: traycable.ir
+    volumes:
+      - .:/var/www/html
+    env_file:
+      - .env
+    ports:
+      - 8120:80
+    restart: unless-stopped
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+      - UPLOAD_LIMIT=300M
