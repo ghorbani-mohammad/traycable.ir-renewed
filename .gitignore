@@ -1,2 +1,3 @@
 .env
 traycable_db_volume/
+.well-known/
