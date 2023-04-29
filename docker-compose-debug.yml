@@ -25,5 +25,18 @@ services:
     networks:
       - traycable
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=mysql
+      - UPLOAD_LIMIT=300M
+    depends_on:
+      - mysql
+    networks:
+      - traycable
+
 networks:
   traycable:
