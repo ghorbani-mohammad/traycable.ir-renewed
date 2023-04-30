@@ -3,7 +3,7 @@ version: '3'
 services:
   traycable:
     image: thiagobarradas/wordpress:4.9.4-php7.2
-    container_name: traycable.ir
+    container_name: traycable_app
     volumes:
       - .:/var/www/html
     env_file:
@@ -16,7 +16,7 @@ services:
 
   mysql:
     image: mysql:8.0.32
-    container_name: mysql
+    container_name: traycable_mysql
     command: --default-authentication-plugin=mysql_native_password
     env_file:
       - .env
@@ -31,7 +31,7 @@ services:
     ports:
       - 8080:80
     environment:
-      - PMA_HOST=mysql
+      - PMA_HOST=traycable_mysql
       - UPLOAD_LIMIT=300M
     depends_on:
       - mysql

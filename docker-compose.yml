@@ -3,7 +3,7 @@ version: '3'
 services:
   traycable:
     image: thiagobarradas/wordpress:4.9.4-php7.2
-    container_name: traycable.ir
+    container_name: traycable_app
     volumes:
       - .:/var/www/html
     env_file:
